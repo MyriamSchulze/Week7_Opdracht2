@@ -1,0 +1,82 @@
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+    /* ik begrijp niet waarom alle tekst onderstreept blijft */
+}
+
+img {
+    max-width: 100%;
+}
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.navigation ul {
+    width: 20vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+li {
+    list-style: none;
+}
+.nav-link {
+    text-decoration: none;
+}
+.main {
+    background-color: lightslategray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    margin: 0rem 2rem;
+}
+.story__category {
+    color: grey;
+    text-transform: uppercase;
+}
+.hero {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.hero__title {
+    font-size: 3rem;
+}
+.featured {
+    background-color: white;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.top-stories {
+    background-color: white;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.most-recent {
+    background-color: white;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+.recent-stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.highlight {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.special-edition {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
