@@ -4,12 +4,21 @@ body {
     color: white;
     text-decoration: none;
     /* ik begrijp niet waarom alle tekst onderstreept blijft */
+    display: grid;
+    grid-template-areas: 
+    "header header header header header header" 
+    "background main main main main background"
+    "background main main main main background"
+    "background main main main main background"
+    "background main main main main background"
+    "footer footer footer footer footer footer"
 }
 
 img {
     max-width: 100%;
 }
 .header {
+    grid-area: header;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -27,6 +36,7 @@ li {
     text-decoration: none;
 }
 .main {
+    grid-area: main;
     background-color: lightslategray;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -79,4 +89,7 @@ li {
 .special-edition {
     grid-column-start: 2;
     grid-column-end: 4;
+}
+.footer {
+    grid-area: footer;
 }
