@@ -34,9 +34,7 @@ a {
 .story__list {
     padding: 0rem;
 }
-img {
-    max-width: 100%;
-}
+
 .header {
     grid-area: header;
     display: flex;
@@ -75,6 +73,8 @@ li {
 
 .hero {
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 .hero__category {
     color: white;
@@ -88,30 +88,47 @@ li {
 }
 .featured {
     grid-area: featured;
+    display: flex;
+    flex-direction: column;
 }
 .featured-stories {
     padding: 0rem 0rem 0rem 2rem;
+    display: flex;
+    flex-direction: column;
 }
 .top-stories {
     grid-area: top-stories;
-
+}
+.top-stories .story__list {
+    display: flex;
+    flex-direction: column;
 }
 .most-recent {
     grid-area: most-recent;
-
 }
 .recent-stories {
-    grid-area: recent-stories;
+    display: flex;
+    flex-direction: column;
 
 }
 .highlight {
     grid-area: highlight;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+
 }
 .highlight .story__text {
     color: white;
 }
+.highlight .block-content {
+    padding: 4em 2em;
+}
 .special-edition {
     grid-area: special-edition;
+}
+.block-content--special {
+    padding: 2em 1em 8em 1em;
 }
 .block__title--special {
     color: white;
@@ -128,11 +145,37 @@ li {
 }
 
 @media screen and (min-width: 500px) {
-.main {
-    grid-template-areas: 
-        "hero hero highlight"
-        "hero hero featured"
-        "top-stories special-edition featured"
-        "top-stories most-recent most-recent"
-}
-}
+    /* ik wilde hier eigenlijk featured-stories, recent-stories en top-stories laten wrappen, maar bij 'flex-flow: row wrap' worden het kolommen ipv rijen, ik begrijp niet waarom */
+    .featured-stories {
+        flex-flow: row nowrap;
+    }
+    .recent-stories {
+        flex-flow: row nowrap;
+    }
+    .top-stories .story__list {
+        flex-flow: row nowrap;
+    }
+    }
+    
+@media screen and (min-width: 750px) {
+    .main {
+        grid-template-areas: 
+        /* ik begrijp niet waarom het hero-block niet over drie kolommen breedte en 2 rijen hoogte staat, maar 1 kolom hoog en 1 kolom breed */
+        /* hoe kan ik het beste de hoogte van het highlight-block sturen? het wordt erg hoog bij een breed beeldscherm */
+        "hero hero hero highlight"
+            "hero hero hero featured"
+            "top-stories special-edition special-edition featured"
+            "top-stories most-recent most-recent most-recent";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    .top-stories .story__list {
+        flex-direction: column;  
+    }
+    .featured-stories {
+        flex-direction: column;
+    }
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
