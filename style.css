@@ -75,6 +75,7 @@ li {
     color: white;
     display: flex;
     flex-direction: column;
+    grid-area: hero;
 }
 .hero__category {
     color: white;
